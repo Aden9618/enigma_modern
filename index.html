@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현대식 에니그마 프로그램</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ui-container">
+        <div class="title">현대식 에니그마 프로그램</div>
+        
+        <button class="reset-btn interactive" onclick="resetMachine()">초기화</button>
+        
+        <div class="rotor-container interactive">
+            <div class="rotor" onclick="shiftRotor(0)" id="rotor0">A</div>
+            <div class="rotor" onclick="shiftRotor(1)" id="rotor1">A</div>
+            <div class="rotor" onclick="shiftRotor(2)" id="rotor2">A</div>
+        </div>
+        
+        <div class="rotor-selector interactive">
+            <button class="rotor-select-btn" onclick="selectRotor(0)">로터1: <span id="rotor-sel-0">1</span></button>
+            <button class="rotor-select-btn" onclick="selectRotor(1)">로터2: <span id="rotor-sel-1">2</span></button>
+            <button class="rotor-select-btn" onclick="selectRotor(2)">로터3: <span id="rotor-sel-2">3</span></button>
+        </div>
+        
+        <div class="plugboard-container interactive">
+            <div class="plugboard-header">플러그보드 설정</div>
+            <div class="plugboard" id="plugboard-row1"></div>
+            <div class="plugboard" id="plugboard-row2"></div>
+        </div>
+        
+        <div class="lampboard-container">
+            <div class="keyboard-row">
+                <div class="key" data-char="A" onclick="handleKeyClick('A')">A</div>
+                <div class="key" data-char="B" onclick="handleKeyClick('B')">B</div>
+                <div class="key" data-char="C" onclick="handleKeyClick('C')">C</div>
+                <div class="key" data-char="D" onclick="handleKeyClick('D')">D</div>
+                <div class="key" data-char="E" onclick="handleKeyClick('E')">E</div>
+                <div class="key" data-char="F" onclick="handleKeyClick('F')">F</div>
+                <div class="key" data-char="G" onclick="handleKeyClick('G')">G</div>
+                <div class="key" data-char="H" onclick="handleKeyClick('H')">H</div>
+                <div class="key" data-char="I" onclick="handleKeyClick('I')">I</div>
+                <div class="key" data-char="J" onclick="handleKeyClick('J')">J</div>
+                <div class="key" data-char="K" onclick="handleKeyClick('K')">K</div>
+                <div class="key" data-char="L" onclick="handleKeyClick('L')">L</div>
+                <div class="key" data-char="M" onclick="handleKeyClick('M')">M</div>
+            </div>
+            <div class="keyboard-row">
+                <div class="key" data-char="N" onclick="handleKeyClick('N')">N</div>
+                <div class="key" data-char="O" onclick="handleKeyClick('O')">O</div>
+                <div class="key" data-char="P" onclick="handleKeyClick('P')">P</div>
+                <div class="key" data-char="Q" onclick="handleKeyClick('Q')">Q</div>
+                <div class="key" data-char="R" onclick="handleKeyClick('R')">R</div>
+                <div class="key" data-char="S" onclick="handleKeyClick('S')">S</div>
+                <div class="key" data-char="T" onclick="handleKeyClick('T')">T</div>
+                <div class="key" data-char="U" onclick="handleKeyClick('U')">U</div>
+                <div class="key" data-char="V" onclick="handleKeyClick('V')">V</div>
+                <div class="key" data-char="W" onclick="handleKeyClick('W')">W</div>
+                <div class="key" data-char="X" onclick="handleKeyClick('X')">X</div>
+                <div class="key" data-char="Y" onclick="handleKeyClick('Y')">Y</div>
+                <div class="key" data-char="Z" onclick="handleKeyClick('Z')">Z</div>
+            </div>
+        </div>
+        
+        <div class="io-container">
+            <div class="input-output">
+                <strong>입력:</strong> <span id="input-text"></span>
+            </div>
+            <div class="input-output">
+                <strong>출력:</strong> <span id="output-text"></span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

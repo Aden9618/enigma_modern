@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #001933;
+    color: white;
+    font-family: 'Courier New', monospace;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+canvas {
+    border: none;
+    display: block;
+}
+
+.ui-container {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.interactive {
+    pointer-events: auto;
+}
+
+.rotor-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 80px 0 30px 0;
+    z-index: 10;
+}
+
+.rotor {
+    width: 80px;
+    height: 100px;
+    background: #2a3441;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.rotor:hover {
+    background: #4a5568;
+    border-color: #87ceeb;
+}
+
+.rotor-selector {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    z-index: 10;
+}
+
+.rotor-select-btn {
+    width: 80px;
+    height: 40px;
+    background: #2a3441;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rotor-select-btn:hover {
+    background: #87ceeb;
+    color: #001933;
+}
+
+.plugboard-container {
+    text-align: center;
+    margin: 30px 0;
+    z-index: 10;
+}
+
+.plugboard-header {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+.plugboard {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.plug {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+}
+
+.plug:hover {
+    border-color: #87ceeb;
+    background: #87ceeb;
+    color: #001933;
+}
+
+.plug.connected {
+    border-width: 4px;
+}
+
+.lampboard-container {
+    text-align: center;
+    margin: 50px 0;
+    z-index: 10;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+    gap: 5px;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    background: #2a3441;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.key:hover {
+    background: #4a5568;
+    border-color: #87ceeb;
+}
+
+.key.lit {
+    background: #ff4444;
+    border-color: #ff6666;
+    box-shadow: 0 0 20px #ff4444;
+}
+
+.io-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+    z-index: 10;
+}
+
+.input-output {
+    background: rgba(42, 52, 65, 0.9);
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    flex: 1;
+    max-width: 500px;
+    word-break: break-all;
+    min-height: 60px;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin: 20px 0;
+    z-index: 10;
+}
+
+.reset-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #2a3441;
+    border: 2px solid #4a5568;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.reset-btn:hover {
+    background: #87ceeb;
+    color: #001933;
+}
+
+@media (max-width: 768px) {
+    .plugboard {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+    }
+    
+    .plug {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .key {
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    .rotor {
+        width: 70px;
+        height: 90px;
+        font-size: 40px;
+    }
+    
+    .io-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
